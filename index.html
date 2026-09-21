@@ -1,8 +1,10 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galaxia de Flores Amarillas Alex Dev</title>
 
     <!--
@@ -112,6 +114,49 @@ https://wa.me/525568916053
       0% { transform: scale(0.5); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
     }
+
+    /* ===== SOLO MÚSICA ===== */
+    #botonMusica {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 9999;
+      min-width: 220px;
+      min-height: 54px;
+      padding: 14px 24px;
+      border: 2px solid #ffd83d;
+      border-radius: 40px;
+      background: rgba(15, 10, 0, 0.92);
+      color: #ffd83d;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer !important;
+      box-shadow:
+        0 0 15px rgba(255, 216, 61, 0.7),
+        0 0 35px rgba(255, 180, 0, 0.3);
+      -webkit-tap-highlight-color: transparent;
+      touch-action: manipulation;
+      transition: 0.2s ease;
+    }
+
+    #botonMusica:active {
+      transform: translateX(-50%) scale(0.94);
+    }
+
+    @media (max-width: 600px) {
+      #botonMusica {
+        bottom: 18px;
+        min-width: 230px;
+        min-height: 56px;
+        font-size: 17px;
+      }
+
+      #cartaImg {
+        max-width: 94vw;
+        max-height: 75vh;
+      }
+    }
   </style>
 </head>
 
@@ -122,6 +167,15 @@ https://wa.me/525568916053
     <img id="cartaImg" src="" alt="Carta">
     <button id="cerrarModal">Cerrar</button>
   </div>
+
+  <!-- ===== SOLO MÚSICA ===== -->
+  <audio id="musica" loop preload="metadata">
+    <source src="Entre%20tus%20brazos%20quiero%20quedarme.m4a%20%282%29.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="botonMusica" type="button">
+    🎵 Tocar para escuchar
+  </button>
 
   <script type="importmap">
     {
@@ -576,44 +630,5 @@ https://wa.me/525568916053
       }
 
       controls.update();
-      renderer.render(scene, camera);
-    }
-
-    window.addEventListener('resize', () => {
-      camera.aspect = window.innerWidth / window.innerHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(window.innerWidth, window.innerHeight);
-    });
-
-    animate();
-  </script>
-</body>
-
-
-  <!--
-
-Contáctame:
-
-   * Crea tus diseños sin código
- https://comparte-amor.vercel.app/
-
-    * Invitame un café
- https://buymeacoffee.com/alexx.dev
-
-    * Portafolio Web
- https://alexxdev.vercel.app
-
-    * Sigueme en tiktok
- https://www.tiktok.com/@alexx.dev?is_from_webapp=1&sender_device=pc
- 
-    * Canal de WhatsApp
- https://whatsapp.com/channel/0029VazQEXq90x2vIdNkrH1p
-
- 
-   * WhatsApp: +52 5587450945
-https://wa.me/525568916053
-
-
--->
-
-</html>
+      renderer.r
+```
